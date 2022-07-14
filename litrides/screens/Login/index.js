@@ -8,9 +8,12 @@ import {
   StyleSheet,
   TextInput,
 } from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import logo from "../../assets/logo.png";
 
-function Login() {
+function Login({navigation}) {
   return (
     <SafeAreaView
       style={{
@@ -70,17 +73,26 @@ function Login() {
               <TextInput placeholder="Password" style={styles.input} />
             </View>
           </View>
-          <View style={{paddingTop:30}}>
-          <TouchableOpacity style={styles.btn}
-            // onPress={()=>{
-            //   navigation.replace('Main')
-            // }}
-          >
-
-            <Text
-           style={styles.btnText} 
-            >LOGIN</Text>
-          </TouchableOpacity>
+          <View style={{ paddingTop: 30 }}>
+            <TouchableOpacity
+              style={styles.btn}
+              // onPress={()=>{
+              //   navigation.replace('Home')
+              // }}
+            >
+              <Text style={styles.btnText}>LOGIN</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                alignItems:'center',
+                paddingTop:8
+              }}
+             onPress={()=>{
+               navigation.navigate('Register')
+             }}
+            >
+              <Text>Don't have an Account? Register</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -96,7 +108,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: -160,
     width: 350,
-    height: 400,
+    height: 420,
     borderColor: "white",
     borderWidth: 2,
     borderRadius: 10,
@@ -113,8 +125,8 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     paddingTop: 30,
   },
-  inputsContainer:{
-    paddingTop:60,
+  inputsContainer: {
+    paddingTop: 60,
   },
   input: {
     width: 325,
@@ -127,20 +139,20 @@ const styles = StyleSheet.create({
 
     // backgroundColor:'gray'
   },
-  btn:{
+  btn: {
     width: 325,
-    height:50,
-    alignItems:'center',
-    justifyContent:'center',
-    backgroundColor: '#F9B401',
-    fontWeight:'500',
-    color:'white',
-    margin:10,
-    borderRadius:25
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#F9B401",
+    fontWeight: "500",
+    color: "white",
+    margin: 10,
+    borderRadius: 25,
   },
-  btnText:{
-    fontWeight:'bold',
-    color:'black',
-    fontSize:20
+  btnText: {
+    fontWeight: "bold",
+    color: "black",
+    fontSize: 20,
   },
 });
