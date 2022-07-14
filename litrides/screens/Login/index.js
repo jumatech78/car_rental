@@ -26,6 +26,8 @@ function Login() {
           backgroundColor: "black",
           alignItems: "center",
           justifyContent: "flex-center",
+          borderBottomLeftRadius:70,
+          borderBottomRightRadius:70,
         }}
       >
         <Image source={logo} style={{ width: 235, height: 159 }} />
