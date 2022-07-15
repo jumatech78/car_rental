@@ -76,9 +76,9 @@ function Login({navigation}) {
           <View style={{ paddingTop: 30 }}>
             <TouchableOpacity
               style={styles.btn}
-              // onPress={()=>{
-              //   navigation.replace('Home')
-              // }}
+              onPress={()=>{
+                navigation.replace('Home')
+              }}
             >
               <Text style={styles.btnText}>LOGIN</Text>
             </TouchableOpacity>
