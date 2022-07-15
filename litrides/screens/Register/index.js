@@ -90,9 +90,9 @@ function Register({navigation}) {
           <View style={{ paddingTop: 30 }}>
             <TouchableOpacity
               style={styles.btn}
-              // onPress={()=>{
-              //   navigation.replace('Login')
-              // }}
+              onPress={()=>{
+                navigation.replace('Login')
+              }}
             >
               <Text style={styles.btnText}>REGISTER</Text>
             </TouchableOpacity>
