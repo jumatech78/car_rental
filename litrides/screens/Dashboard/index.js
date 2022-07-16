@@ -1,10 +1,13 @@
 import React from "react";
-import { SafeAreaView, View, Text, StyleSheet } from "react-native";
+import { SafeAreaView, View, Text, StyleSheet, TextInput } from "react-native";
 
 function Dashboard() {
   return (
        <SafeAreaView style={styles.main_container}>
       <View style={styles.mainHeader}>
+        <View style={styles.inputContainer}>
+          <TextInput style={styles.input} placeholder="Search"/>
+        </View>
         <Text>half one</Text>
       </View>
       <View style={styles.mainFooter}>
@@ -24,7 +27,21 @@ const styles = StyleSheet.create({
     },
     mainHeader:{
         flex:0.5,
-        backgroundColor:'black'
+        backgroundColor:'black',
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    inputContainer:{
+      backgroundColor:'white',
+      height:40,
+      width:380,
+      borderRadius:5,
+      justifyContent:'center',
+      paddingLeft:10
+    },
+    input:{
+      height:40,
+      fontSize:20
     },
     mainFooter:{
         flex:0.5,
