@@ -1,6 +1,8 @@
 import React from "react";
 import { SafeAreaView, View, Text, StyleSheet, TextInput } from "react-native";
 
+import Brand from '../../components/Brand';
+
 function Dashboard() {
   return (
        <SafeAreaView style={styles.main_container}>
@@ -8,9 +10,10 @@ function Dashboard() {
         <View style={styles.inputContainer}>
           <TextInput style={styles.input} placeholder="Search"/>
         </View>
-        <Text>half one</Text>
+        {/* <Text>half one</Text> */}
       </View>
       <View style={styles.mainFooter}>
+        <Brand />
         <Text>half two</Text>
       </View>
     </SafeAreaView>
@@ -26,7 +29,7 @@ const styles = StyleSheet.create({
         backgroundColor:'white'
     },
     mainHeader:{
-        flex:0.5,
+        flex:0.45,
         backgroundColor:'black',
         justifyContent:'center',
         alignItems:'center'
@@ -44,7 +47,7 @@ const styles = StyleSheet.create({
       fontSize:20
     },
     mainFooter:{
-        flex:0.5,
+        flex:0.55,
         backgroundColor:'white'
     }
 
