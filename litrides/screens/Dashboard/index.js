@@ -14,7 +14,9 @@ function Dashboard() {
         {/* <Text>half one</Text> */}
       </View>
       <View style={styles.mainFooter}>
-        <Brand />
+        <View style={{ top: -40 }}>
+          <Brand />
+        </View>
         <View style={styles.headerFooter}>
           <Text style={styles.txtLeft}>Hot deal</Text>
           <Text style={styles.txtRight}>View all</Text>
@@ -55,19 +57,19 @@ const styles = StyleSheet.create({
     flex: 0.55,
     backgroundColor: "white",
   },
-  headerFooter:{
-    flexDirection:'row',
-    justifyContent:'space-between',
+  headerFooter: {
+    flexDirection: "row",
+    justifyContent: "space-between",
     paddingLeft: 20,
     paddingRight: 20,
   },
-  txtLeft:{
-    fontWeight:'bold',
-    fontSize: 17
-  },
-  txtRight:{
-    fontWeight:'bold',
+  txtLeft: {
+    fontWeight: "bold",
     fontSize: 17,
-    color:'#F9B401'
-  }
+  },
+  txtRight: {
+    fontWeight: "bold",
+    fontSize: 17,
+    color: "#F9B401",
+  },
 });

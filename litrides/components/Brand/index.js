@@ -43,7 +43,7 @@ export default Brand;
 const styles = StyleSheet.create({
   mainContainer: {
     display: "flex",
-    top: -40,
+    // top: -40,
   },
   header: {
     flexDirection: "row",

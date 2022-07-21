@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 
 import q7 from "../../assets/q7.png";
 
@@ -11,17 +11,17 @@ function Card() {
           style={{
             flexDirection: "row",
             justifyContent: "space-between",
-            paddingLeft: 10,
-            paddingRight: 10,
-            paddingTop: 15,
+            paddingLeft: 15,
+            paddingRight: 15,
+            paddingTop: 16,
           }}
         >
           <Text style={{ color: "#CDCED1", fontWeight: "bold" }}>AUDI</Text>
           <Text>$14.99</Text>
         </View>
-          <View style={{ alignItems:'center', paddingTop: 25}}>
-            <Image source={q7} style={{ width: 235, height: 159 }} />
-          </View>
+        <View style={{ alignItems: "center", paddingTop: 25 }}>
+          <Image source={q7} style={{ width: 235, height: 159 }} />
+        </View>
       </View>
     </View>
   );
