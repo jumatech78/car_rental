@@ -1,20 +1,25 @@
 import React from "react";
 import { SafeAreaView, View, Text, StyleSheet, TextInput } from "react-native";
 
-import Brand from '../../components/Brand';
+import Brand from "../../components/Brand";
+import Card from "../../components/Card";
 
 function Dashboard() {
   return (
-       <SafeAreaView style={styles.main_container}>
+    <SafeAreaView style={styles.main_container}>
       <View style={styles.mainHeader}>
         <View style={styles.inputContainer}>
-          <TextInput style={styles.input} placeholder="Search"/>
+          <TextInput style={styles.input} placeholder="Search" />
         </View>
         {/* <Text>half one</Text> */}
       </View>
       <View style={styles.mainFooter}>
         <Brand />
-        <Text>half two</Text>
+        <View style={styles.headerFooter}>
+          <Text style={styles.txtLeft}>Hot deal</Text>
+          <Text style={styles.txtRight}>View all</Text>
+        </View>
+        <Card />
       </View>
     </SafeAreaView>
   );
@@ -23,32 +28,46 @@ function Dashboard() {
 export default Dashboard;
 
 const styles = StyleSheet.create({
-    main_container:{
-        flex:1,
-        // justifyContent:'center',
-        backgroundColor:'white'
-    },
-    mainHeader:{
-        flex:0.45,
-        backgroundColor:'black',
-        justifyContent:'center',
-        alignItems:'center'
-    },
-    inputContainer:{
-      backgroundColor:'white',
-      height:40,
-      width:380,
-      borderRadius:5,
-      justifyContent:'center',
-      paddingLeft:10
-    },
-    input:{
-      height:40,
-      fontSize:20
-    },
-    mainFooter:{
-        flex:0.55,
-        backgroundColor:'white'
-    }
-
+  main_container: {
+    flex: 1,
+    // justifyContent:'center',
+    backgroundColor: "white",
+  },
+  mainHeader: {
+    flex: 0.45,
+    backgroundColor: "black",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  inputContainer: {
+    backgroundColor: "white",
+    height: 40,
+    width: 380,
+    borderRadius: 5,
+    justifyContent: "center",
+    paddingLeft: 10,
+  },
+  input: {
+    height: 40,
+    fontSize: 20,
+  },
+  mainFooter: {
+    flex: 0.55,
+    backgroundColor: "white",
+  },
+  headerFooter:{
+    flexDirection:'row',
+    justifyContent:'space-between',
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  txtLeft:{
+    fontWeight:'bold',
+    fontSize: 17
+  },
+  txtRight:{
+    fontWeight:'bold',
+    fontSize: 17,
+    color:'#F9B401'
+  }
 });
