@@ -6,11 +6,17 @@ import {
   Image,
   StyleSheet,
   ScrollView,
+  TouchableOpacity,
 } from "react-native";
 import Brand from "../../components/Brand";
 import Card from "../../components/Card";
 
+import { useNavigation } from "@react-navigation/native";
+
+import CarDetails from "../CarDetails";
+
 function PostCard() {
+  const navigation = useNavigation();
   return (
     <SafeAreaView>
       <ScrollView>
@@ -19,9 +25,23 @@ function PostCard() {
           <View>
             <Brand />
             <View style={styles.body}>
-              <Card />
-              <Card />
-              <Card />
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate("CarDetails");
+                }}
+                style={styles.TouchCard}
+              >
+                <Card />
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.TouchCard}>
+                <Card />
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.TouchCard}>
+                <Card />
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.TouchCard}>
+                <Card />
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -42,10 +62,10 @@ const styles = StyleSheet.create({
   headContainer: {
     paddingTop: 20,
   },
-  body:{
-    paddingTop: 15
+  body: {
+    paddingTop: 15,
   },
-  bodyComponent:{
-    padding:10
-  }
+  TouchCard: {
+    paddingBottom: 15,
+  },
 });
