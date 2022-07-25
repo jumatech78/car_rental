@@ -8,6 +8,7 @@ import {
   ScrollView,
 } from "react-native";
 import Brand from "../../components/Brand";
+import Card from "../../components/Card";
 
 function PostCard() {
   return (
@@ -17,6 +18,11 @@ function PostCard() {
         <View style={styles.headContainer}>
           <View>
             <Brand />
+            <View style={styles.body}>
+              <Card />
+              <Card />
+              <Card />
+            </View>
           </View>
         </View>
       </ScrollView>
@@ -36,4 +42,10 @@ const styles = StyleSheet.create({
   headContainer: {
     paddingTop: 20,
   },
+  body:{
+    paddingTop: 15
+  },
+  bodyComponent:{
+    padding:10
+  }
 });
