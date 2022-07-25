@@ -8,12 +8,12 @@ import {
   StyleSheet,
   TextInput,
 } from "react-native";
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import logo from "../../assets/logo.png";
 
-function Login({navigation}) {
+function Login({ navigation }) {
   return (
     <SafeAreaView
       style={{
@@ -76,20 +76,20 @@ function Login({navigation}) {
           <View style={{ paddingTop: 30 }}>
             <TouchableOpacity
               style={styles.btn}
-              onPress={()=>{
-                navigation.replace('Home')
+              onPress={() => {
+                navigation.replace("Home");
               }}
             >
               <Text style={styles.btnText}>LOGIN</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              style={{
-                alignItems:'center',
-                paddingTop:8
+              onPress={() => {
+                navigation.navigate("Register");
               }}
-             onPress={()=>{
-               navigation.navigate('Register')
-             }}
+              style={{
+                alignItems: "center",
+                paddingTop: 8,
+              }}
             >
               <Text>Don't have an Account? Register</Text>
             </TouchableOpacity>

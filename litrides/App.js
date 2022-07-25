@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from './screens/Login';
 import Register from './screens/Register';
 import Home from './screens/Home';
+import PostCard from "./screens/PostCard";
 // import { Header } from "react-native/Libraries/NewAppScreen";
 
 const Stack = createNativeStackNavigator();
@@ -28,6 +29,11 @@ function App() {
           options={{ headerShown: false }}
           name="Home"
           component={Home}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="PostCard"
+          component={PostCard}
         />
       </Stack.Navigator>
     </NavigationContainer>

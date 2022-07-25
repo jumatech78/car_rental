@@ -1,10 +1,14 @@
 import React from "react";
 import { SafeAreaView, View, Text, StyleSheet, TextInput } from "react-native";
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// import { useNavigation } from '@react-navigation/native';
 
 import Brand from "../../components/Brand";
 import Card from "../../components/Card";
 
 function Dashboard() {
+  // const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.main_container}>
       <View style={styles.mainHeader}>

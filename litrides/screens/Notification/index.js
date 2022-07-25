@@ -15,7 +15,7 @@ function Notification() {
   return (
     <SafeAreaView>
       <Text style={styles.header}>Brands</Text>
-      <ScrollView style={styles.Container}>
+      {/* <ScrollView style={styles.Container}>
         <View>
           <Brand />
         </View>
@@ -25,7 +25,7 @@ function Notification() {
           <Card />
           <Card />
         </View>
-      </ScrollView>
+      </ScrollView> */}
     </SafeAreaView>
   );
 }
@@ -42,4 +42,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     paddingLeft: 18,
   },
+ 
+ 
 });
