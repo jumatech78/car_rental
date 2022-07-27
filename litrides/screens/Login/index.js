@@ -70,7 +70,11 @@ function Login({ navigation }) {
                 borderRadius: 5,
               }}
             >
-              <TextInput placeholder="Password" style={styles.input} />
+              <TextInput
+                placeholder="Password"
+                secureTextEntry
+                style={styles.input}
+              />
             </View>
           </View>
           <View style={{ paddingTop: 30 }}>

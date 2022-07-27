@@ -8,12 +8,12 @@ import {
   StyleSheet,
   TextInput,
 } from "react-native";
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import logo from "../../assets/logo.png";
 
-function Register({navigation}) {
+function Register({ navigation }) {
   return (
     <SafeAreaView
       style={{
@@ -70,7 +70,11 @@ function Register({navigation}) {
                 borderRadius: 5,
               }}
             >
-              <TextInput placeholder="Password" style={styles.input} />
+              <TextInput
+                placeholder="Password"
+                secureTextEntry
+                style={styles.input}
+              />
             </View>
             <View
               style={{
@@ -84,26 +88,30 @@ function Register({navigation}) {
                 borderRadius: 5,
               }}
             >
-              <TextInput placeholder="Confirm Password" style={styles.input} />
+              <TextInput
+                placeholder="Confirm Password"
+                secureTextEntry
+                style={styles.input}
+              />
             </View>
           </View>
           <View style={{ paddingTop: 30 }}>
             <TouchableOpacity
               style={styles.btn}
-              onPress={()=>{
-                navigation.replace('Login')
+              onPress={() => {
+                navigation.replace("Login");
               }}
             >
               <Text style={styles.btnText}>REGISTER</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={{
-                alignItems:'center',
-                paddingTop:8
+                alignItems: "center",
+                paddingTop: 8,
               }}
-             onPress={()=>{
-               navigation.navigate('Login')
-             }}
+              onPress={() => {
+                navigation.navigate("Login");
+              }}
             >
               <Text>Have an Account? Login</Text>
             </TouchableOpacity>
@@ -170,13 +178,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 });
-
-
-
-
-
-
-
 
 // import React from "react";
 // import { View, Text } from "react-native";
