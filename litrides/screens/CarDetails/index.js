@@ -9,9 +9,12 @@ import {
 } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
+
 import PostCard from "../PostCard";
 
 import AntDesign from "react-native-vector-icons/AntDesign";
+import Entypo from "react-native-vector-icons/Entypo";
+
 import q7 from "../../assets/q7.png";
 
 function CarDetails() {
@@ -31,6 +34,31 @@ function CarDetails() {
         </View>
       </View>
       <View style={styles.FooterContainer}>
+        <View style={styles.headComponent}>
+          <View>
+            <Text style={{ color: "white", fontWeight: "700", fontSize: 22 }}>
+              AUDI Q7
+            </Text>
+            <Text
+              style={{
+                color: "white",
+                fontWeight: "600",
+                fontSize: 13,
+                paddingTop: 5,
+              }}
+            >
+              $30 per day
+            </Text>
+          </View>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <Entypo
+              name="star"
+              size={20}
+              style={{ color: "#F9B401", paddingRight: 3 }}
+            />
+            <Text style={{ color: "white", fontSize: 18 }}>4.8</Text>
+          </View>
+        </View>
         <Text>second</Text>
       </View>
     </SafeAreaView>
@@ -56,5 +84,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#000000",
     borderTopLeftRadius: 50,
     borderTopRightRadius: 50,
+  },
+  headComponent: {
+    paddingTop: 30,
+    paddingLeft: 20,
+    paddingRight: 20,
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });
