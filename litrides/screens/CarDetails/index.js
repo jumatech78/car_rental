@@ -21,7 +21,7 @@ import wifi from "../../assets/wifi.png";
 import seat from "../../assets/seat.png";
 import sensor from "../../assets/sensors.png";
 import bluetooth from "../../assets/bluetooth.png";
-import cardoor from "../../assets/cardoor.png"
+import cardoor from "../../assets/cardoor.png";
 
 function CarDetails() {
   const navigation = useNavigation();
@@ -147,6 +147,28 @@ function CarDetails() {
             <Text style={{ color: "white", paddingTop: 5 }}>4</Text>
           </View>
         </View>
+        <TouchableOpacity
+          style={{
+            paddingTop: 22,
+            paddingLeft: 25,
+            flexDirection: "row-reverse",
+          }}
+        >
+          <View
+            style={{
+              backgroundColor: "#F9B401",
+              height: 37,
+              width: 120,
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: 5,
+            }}
+          >
+            <Text style={{ color: "white", fontWeight: "bold", fontSize: 22 }}>
+              Book Now
+            </Text>
+          </View>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
