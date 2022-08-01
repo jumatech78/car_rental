@@ -30,7 +30,7 @@ function CarDetails() {
       <View style={styles.HeadContainer}>
         <TouchableOpacity
           onPress={() => {
-            navigation.replace("PostCard");
+            navigation.goBack("PostCard");
           }}
         >
           <AntDesign name="left" size={22} style={styles.headerIcon} />
@@ -191,8 +191,8 @@ const styles = StyleSheet.create({
   FooterContainer: {
     flex: 0.6,
     backgroundColor: "#000000",
-    borderTopLeftRadius: 50,
-    borderTopRightRadius: 50,
+    borderTopLeftRadius: 35,
+    borderTopRightRadius: 35,
   },
   headComponent: {
     paddingTop: 30,
