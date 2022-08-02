@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -8,12 +8,42 @@ import {
   StyleSheet,
   TextInput,
 } from "react-native";
+
+import { auth } from "../../firebase";
+// import { createUserWithEmailAndPassword } from "firebase/auth";
+
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import logo from "../../assets/logo.png";
 
 function Register({ navigation }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  
+  // createUserWithEmailAndPassword(auth, email, password)
+  //   .then((userCredential) => {
+  //     // Signed in
+  //     const user = userCredential.user;
+  //     // ...
+  //   })
+  //   .catch((error) => {
+  //     const errorCode = error.code;
+  //     const errorMessage = error.message;
+  //     // ..
+  //   });
+  const handleSignUp = () => {
+    auth
+     .createUserWithEmailAndPassword(email, password)
+     .then(userCredentials => {
+      const user = userCredentials.user;
+      console.log(user.email);
+     })
+     .catch(error => alert(error.message))
+  }
+
   return (
     <SafeAreaView
       style={{
@@ -56,7 +86,12 @@ function Register({ navigation }) {
                 borderRadius: 5,
               }}
             >
-              <TextInput placeholder="Email" style={styles.input} />
+              <TextInput
+                placeholder="Email"
+                value={email}
+                onChangeText={(text) => setEmail(text)}
+                style={styles.input}
+              />
             </View>
             <View
               style={{
@@ -72,6 +107,8 @@ function Register({ navigation }) {
             >
               <TextInput
                 placeholder="Password"
+                value={password}
+                onChangeText={(text) => setPassword(text)}
                 secureTextEntry
                 style={styles.input}
               />
@@ -90,6 +127,8 @@ function Register({ navigation }) {
             >
               <TextInput
                 placeholder="Confirm Password"
+                value={confirmPassword}
+                onChangeText={(text) => setConfirmPassword(text)}
                 secureTextEntry
                 style={styles.input}
               />
@@ -97,10 +136,11 @@ function Register({ navigation }) {
           </View>
           <View style={{ paddingTop: 30 }}>
             <TouchableOpacity
+              onPress={handleSignUp}
               style={styles.btn}
-              onPress={() => {
-                navigation.replace("Login");
-              }}
+              // onPress={() => {
+              //   navigation.replace("Login");
+              // }}
             >
               <Text style={styles.btnText}>REGISTER</Text>
             </TouchableOpacity>

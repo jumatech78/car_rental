@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -14,6 +14,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import logo from "../../assets/logo.png";
 
 function Login({ navigation }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <SafeAreaView
       style={{
@@ -56,7 +59,12 @@ function Login({ navigation }) {
                 borderRadius: 5,
               }}
             >
-              <TextInput placeholder="Email" style={styles.input} />
+              <TextInput
+                placeholder="Email"
+                value={email}
+                onChangeText={(text) => setEmail(text)}
+                style={styles.input}
+              />
             </View>
             <View
               style={{
@@ -72,6 +80,8 @@ function Login({ navigation }) {
             >
               <TextInput
                 placeholder="Password"
+                value={password}
+                onChangeText={(text) => setPassword(text)}
                 secureTextEntry
                 style={styles.input}
               />
