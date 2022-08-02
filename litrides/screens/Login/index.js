@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -8,6 +8,9 @@ import {
   StyleSheet,
   TextInput,
 } from "react-native";
+
+import { auth } from "../../firebase";
+
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
@@ -16,6 +19,27 @@ import logo from "../../assets/logo.png";
 function Login({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() =>{
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      if(user){
+        navigation.replace('Home')
+      }
+    })
+
+    return unsubscribe
+  }, [])
+
+  const handleLogin = () =>{
+    auth
+     .signInWithEmailAndPassword(email, password)
+     .then(userCredentials => {
+      const user = userCredentials.user;
+      console.log('Logged in with:', user.email);
+     })
+     .catch(error => alert(error.massage))
+  }
+
 
   return (
     <SafeAreaView
@@ -90,9 +114,10 @@ function Login({ navigation }) {
           <View style={{ paddingTop: 30 }}>
             <TouchableOpacity
               style={styles.btn}
-              onPress={() => {
-                navigation.replace("Home");
-              }}
+              onPress={handleLogin}
+              // onPress={() => {
+              //   navigation.replace("Home");
+              // }}
             >
               <Text style={styles.btnText}>LOGIN</Text>
             </TouchableOpacity>

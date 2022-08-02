@@ -39,7 +39,7 @@ function Register({ navigation }) {
      .createUserWithEmailAndPassword(email, password)
      .then(userCredentials => {
       const user = userCredentials.user;
-      console.log(user.email);
+      console.log('Registered with:',user.email);
      })
      .catch(error => alert(error.message))
   }
