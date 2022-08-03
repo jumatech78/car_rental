@@ -1,11 +1,24 @@
 import React from "react";
 import { SafeAreaView, View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import Entypo from "react-native-vector-icons/Entypo";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { auth } from "../../firebase";
 
 function Profile() {
+  const navigation = useNavigation();
+
+  const handleSignOut = () => {
+    auth
+    .signOut()
+    .then(() => {
+      navigation.replace("Login")
+    })
+    .catch(error => alert(error.message))
+  }
+
   return (
     <SafeAreaView style={styles.MainContainer}>
       <View style={styles.mainHeaderContainer}>
@@ -30,7 +43,7 @@ function Profile() {
             <Text style={{ paddingLeft: 20, fontSize: 21}}>Support</Text>
           </View>
         </View>
-        <TouchableOpacity style={{ top: 160 }}>
+        <TouchableOpacity onPress={handleSignOut} style={{ top: 160 }}>
           <View style={{ flexDirection:'row', alignItems:"center"}}>
           <MaterialCommunityIcons name="logout" size={26} />
             <Text style={{ fontWeight:'bold', fontSize: 19, paddingLeft: 20 }}>LogOut</Text>
